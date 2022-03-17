@@ -1,0 +1,120 @@
+Region N results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 lost to #9
+Seed #5 lost to #12
+Seed #4 beat #13
+Seed #6 beat #11
+Seed #3 beat #14
+Seed #7 lost to #10
+Seed #2 beat #15
+
+Second round
+-------------------
+Seed #1 beat #9
+Seed #4 lost to #12
+Seed #3 lost to #6
+Seed #2 beat #10
+
+Sweet 16 round
+-------------------
+Seed #1 beat #12
+Seed #2 beat #6
+
+Elite 8 round
+-------------------
+Seed #1 beat #2
+
+Region E results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 beat #9
+Seed #5 lost to #12
+Seed #4 lost to #13
+Seed #6 lost to #11
+Seed #3 lost to #14
+Seed #7 beat #10
+Seed #2 beat #15
+
+Second round
+-------------------
+Seed #1 beat #8
+Seed #12 beat #13
+Seed #11 beat #14
+Seed #2 beat #7
+
+Sweet 16 round
+-------------------
+Seed #1 beat #12
+Seed #2 beat #11
+
+Elite 8 round
+-------------------
+Seed #1 lost to #2
+
+Region S results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 lost to #9
+Seed #5 beat #12
+Seed #4 beat #13
+Seed #6 lost to #11
+Seed #3 beat #14
+Seed #7 beat #10
+Seed #2 beat #15
+
+Second round
+-------------------
+Seed #1 beat #9
+Seed #4 lost to #5
+Seed #3 lost to #11
+Seed #2 beat #7
+
+Sweet 16 round
+-------------------
+Seed #1 beat #5
+Seed #2 lost to #11
+
+Elite 8 round
+-------------------
+Seed #1 beat #11
+
+Region W results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 beat #9
+Seed #5 lost to #12
+Seed #4 beat #13
+Seed #6 beat #11
+Seed #3 lost to #14
+Seed #7 lost to #10
+Seed #2 beat #15
+
+Second round
+-------------------
+Seed #1 beat #8
+Seed #4 beat #12
+Seed #6 beat #14
+Seed #2 beat #10
+
+Sweet 16 round
+-------------------
+Seed #1 beat #4
+Seed #2 beat #6
+
+Elite 8 round
+-------------------
+Seed #1 beat #2
+
+Final four round
+-------------------
+Seed #1 from the W beat #2 from the E
+Seed #1 from the N lost to #1 from the S
+
+Championship round
+-------------------
+Seed #1 from the W beat #1 from the S
