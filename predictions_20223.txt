@@ -1,0 +1,120 @@
+Region Midwest results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 lost to #9
+Seed #5 lost to #12
+Seed #4 beat #13
+Seed #6 beat #11
+Seed #3 lost to #14
+Seed #7 beat #10
+Seed #2 lost to #15
+
+Second round
+-------------------
+Seed #1 beat #9
+Seed #4 beat #12
+Seed #6 beat #14
+Seed #7 lost to #15
+
+Sweet 16 round
+-------------------
+Seed #1 lost to #4
+Seed #6 beat #15
+
+Elite 8 round
+-------------------
+Seed #4 beat #6
+
+Region East results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 lost to #9
+Seed #5 lost to #12
+Seed #4 beat #13
+Seed #6 beat #11
+Seed #3 beat #14
+Seed #7 beat #10
+Seed #2 lost to #15
+
+Second round
+-------------------
+Seed #1 beat #9
+Seed #4 beat #12
+Seed #3 beat #6
+Seed #7 lost to #15
+
+Sweet 16 round
+-------------------
+Seed #1 beat #4
+Seed #3 beat #15
+
+Elite 8 round
+-------------------
+Seed #1 beat #3
+
+Region South results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 lost to #9
+Seed #5 beat #12
+Seed #4 beat #13
+Seed #6 beat #11
+Seed #3 beat #14
+Seed #7 lost to #10
+Seed #2 beat #15
+
+Second round
+-------------------
+Seed #1 beat #9
+Seed #4 lost to #5
+Seed #3 beat #6
+Seed #2 beat #10
+
+Sweet 16 round
+-------------------
+Seed #1 beat #5
+Seed #2 lost to #3
+
+Elite 8 round
+-------------------
+Seed #1 beat #3
+
+Region West results:
+First round
+-------------------
+Seed #1 beat #16
+Seed #8 lost to #9
+Seed #5 lost to #12
+Seed #4 beat #13
+Seed #6 lost to #11
+Seed #3 beat #14
+Seed #7 beat #10
+Seed #2 beat #15
+
+Second round
+-------------------
+Seed #1 beat #9
+Seed #4 beat #12
+Seed #3 lost to #11
+Seed #2 lost to #7
+
+Sweet 16 round
+-------------------
+Seed #1 beat #4
+Seed #7 lost to #11
+
+Elite 8 round
+-------------------
+Seed #1 lost to #11
+
+Final four round
+-------------------
+Seed #1 from the East beat #1 from the South
+Seed #4 from the Midwest beat #11 from the Midwest
+
+Championship round
+-------------------
+Seed #1 from the East lost to #4 from the East

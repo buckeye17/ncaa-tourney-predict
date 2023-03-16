@@ -13,6 +13,7 @@ def generator(
     odds_arr: np.ndarray,
     seed: int = None,
     print_bracket: bool = False,
+    east_vs: str = "midwest",
     return_list: bool = True) -> list:
     '''This function will produce an entire tournament bracket.  A bracket can 
     be represented by printing to the terminal, as a python dictionary or in a nested-list
@@ -26,9 +27,20 @@ def generator(
     top seed being the i-th row and the bottom seed being the j-th column
     seed -- the numpy seed used to generate random picks
     print_bracket -- whether the bracket should be written to the terminal
+    east_vs -- define region the east region will play against in the final four, this
+        apparently changes year-to-year, must be one of: "midwest", "south", "west"
     return_list -- whether the returned object should be the nested-list structure or the 
-    dictionary
+        dictionary
     '''
+
+    east_vs = east_vs[:1].capitalize() + east_vs[1:]
+    valid_east_vs_values = ["Midwest", "South", "West"]
+    if east_vs not in valid_east_vs_values:
+        raise ValueError(f"Invalid Value '{east_vs}' given for east_vs input parameter. "
+                         f"It must be one of the following: {', '.join(valid_east_vs_values)[:-1]}.")
+    valid_east_vs_values.remove(east_vs)
+    valid_east_vs_values = [region + " Region" for region in valid_east_vs_values]
+    east_vs += " Region"
 
     np.random.seed(seed)
     region_ls = ["Midwest", "East", "South", "West"]
@@ -94,7 +106,7 @@ def generator(
         final_four_dict[r] = victors_ls[0]
         tourn_dict[f"{r} Region"] = round_dict
 
-    # Asses the East vs Midwest game
+    # Asses the East vs [east_vs] game
     round_str = "F4, "
 
     if print_bracket:        
@@ -104,21 +116,21 @@ def generator(
     games_dict = {}
     east_final_game_dict_values = tourn_dict["East Region"]["Elite 8 Round"].values()
     east_seed = list(east_final_game_dict_values)[0]
-    midwest_final_game_dict_values = tourn_dict["Midwest Region"]["Elite 8 Round"].values()
-    midwest_seed = list(midwest_final_game_dict_values)[0]
+    east_opponent_final_game_dict_values = tourn_dict[east_vs]["Elite 8 Round"].values()
+    east_opponent_seed = list(east_opponent_final_game_dict_values)[0]
 
-    if east_seed == midwest_seed:
+    if east_seed == east_opponent_seed:
         ts = east_seed
         tr = "East"
-        bs = midwest_seed
-        br = "Midest"
+        bs = east_opponent_seed
+        br = east_vs.replace(" Region", "")
         ts_odds = 0.5
 
     else:
-        ts = min(east_seed, midwest_seed)
-        tr = "East" if east_seed < midwest_seed else "Midwest"
-        bs = max(east_seed, midwest_seed)
-        br = "East" if east_seed > midwest_seed else "Midwest"
+        ts = min(east_seed, east_opponent_seed)
+        tr = "East" if east_seed < east_opponent_seed else east_vs.replace(" Region", "")
+        bs = max(east_seed, east_opponent_seed)
+        br = east_vs.replace(" Region", "") if east_seed > east_opponent_seed else "East"
         ts_odds = odds_arr[ts-1,bs-1]
 
     result = np.random.rand()
@@ -140,24 +152,26 @@ def generator(
 
     round_str += f"{tr[0]}{ts}v{br[0]}{bs}={vr[0]}{vs}, "
 
-    # Asses the West vs South game
-    west_final_game_dict_values = tourn_dict["West Region"]["Elite 8 Round"].values()
-    west_seed = list(west_final_game_dict_values)[0]
-    south_final_game_dict_values = tourn_dict["South Region"]["Elite 8 Round"].values()
-    south_seed = list(south_final_game_dict_values)[0]
+    # Asses the other Final Four game
+    r0_final_game_dict_values = tourn_dict[valid_east_vs_values[0]]["Elite 8 Round"].values()
+    r0_seed = list(r0_final_game_dict_values)[0]
+    r0_name = valid_east_vs_values[0].replace(" Region", "")
+    r1_final_game_dict_values = tourn_dict[valid_east_vs_values[1]]["Elite 8 Round"].values()
+    r1_seed = list(r1_final_game_dict_values)[0]
+    r1_name = valid_east_vs_values[1].replace(" Region", "")
 
-    if west_seed == south_seed:
-        ts = south_seed
-        tr = "South"
-        bs = west_seed
-        br = "West"
+    if r0_seed == r1_seed:
+        ts = r1_seed
+        tr = r0_name
+        bs = r0_seed
+        br = r1_name
         ts_odds = 0.5
 
     else:
-        ts = min(west_seed, south_seed)
-        tr = "West" if west_seed < south_seed else "South"
-        bs = max(west_seed, south_seed)
-        br = "West" if west_seed > south_seed else "South"
+        ts = min(r0_seed, r1_seed)
+        tr = r0_name if r0_seed < r1_seed else r1_name
+        bs = max(r0_seed, r1_seed)
+        br = r1_name if r0_seed > r1_seed else r0_name
         ts_odds = odds_arr[ts-1,bs-1]
 
     result = np.random.rand()
@@ -191,23 +205,23 @@ def generator(
         print("-------------------")
 
     games_dict = {}
-    east_midwest_seed = list(round_dict["Final Four Round"].values())[0]["Victor Seed"]
-    east_midwest_region = list(round_dict["Final Four Round"].values())[0]["Victor Region"]
-    west_south_seed = list(round_dict["Final Four Round"].values())[1]["Victor Seed"]
-    west_south_region = list(round_dict["Final Four Round"].values())[1]["Victor Region"]
+    east_victor_seed = list(round_dict["Final Four Round"].values())[0]["Victor Seed"]
+    east_victor_region = list(round_dict["Final Four Round"].values())[0]["Victor Region"]
+    non_east_victor_seed = list(round_dict["Final Four Round"].values())[1]["Victor Seed"]
+    non_east_victor_region = list(round_dict["Final Four Round"].values())[1]["Victor Region"]
 
-    if east_midwest_seed == west_south_seed:
-        ts = east_midwest_seed
-        tr = east_midwest_region
-        bs = west_south_seed
-        br = west_south_region
+    if east_victor_seed == non_east_victor_seed:
+        ts = east_victor_seed
+        tr = east_victor_region
+        bs = non_east_victor_seed
+        br = non_east_victor_region
         ts_odds = 0.5
 
     else:
-        ts = min(east_midwest_seed, west_south_seed)
-        tr = "East" if east_midwest_seed < west_south_seed else "Midwest"
-        bs = max(east_midwest_seed, west_south_seed)
-        br = "East" if east_midwest_seed > west_south_seed else "Midwest"
+        ts = min(east_victor_seed, non_east_victor_seed)
+        tr = east_victor_region if east_victor_seed < non_east_victor_seed else non_east_victor_region
+        bs = max(east_victor_seed, non_east_victor_seed)
+        br = non_east_victor_region if east_victor_seed > non_east_victor_seed else east_victor_region
         ts_odds = odds_arr[ts-1,bs-1]
 
     result = np.random.rand()
@@ -398,7 +412,7 @@ def main():
     for _ in tqdm(range(n_samples)):
 
         # generate a bracket using the odds in the adjacency matrix
-        rand_bkt = generator(adj_arr)
+        rand_bkt = generator(adj_arr, print_bracket=False, east_vs="south")
 
         # score the predicted bracket
         score = scorer(true_bkt, rand_bkt, score_dict)
