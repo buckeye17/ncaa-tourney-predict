@@ -1,4 +1,4 @@
-name: producer
+name: ncaa
 channels:
   - defaults
 dependencies:
@@ -8,3 +8,5 @@ dependencies:
   - plotly=4.14.3=pyhd3eb1b0_0
   - python=3.8.10=hdbf39b2_7
   - tqdm=4.63.0
+  - scikit-learn=1.2.2
+  - statsmodels=0.13.5
